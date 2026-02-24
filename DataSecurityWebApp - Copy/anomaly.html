@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anomaly Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>AI-Based Anomaly Detection</h2>
+        <p>Detect unusual access patterns using machine learning.</p>
+        <table>
+            <tr><th>Login Hour</th><th>Status</th></tr>
+            {% for hour, status in result %}
+            <tr><td>{{ hour }}</td><td>{{ status }}</td></tr>
+            {% endfor %}
+        </table>
+        <a href="/">⬅ Back</a>
+    </div>
+</body>
+</html>

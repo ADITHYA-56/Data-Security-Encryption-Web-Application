@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encrypt | Data Security App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center justify-center">
+  <div class="bg-white p-10 shadow-xl rounded-xl w-96">
+    <h1 class="text-2xl font-semibold mb-4 text-blue-600">Encrypt Data</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+      <textarea name="text" placeholder="Enter text to encrypt" class="w-full p-2 border rounded mb-3"></textarea>
+      <p class="text-gray-500 my-2">or upload a file:</p>
+      <input type="file" name="file" class="mb-3">
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-800">Encrypt</button>
+    </form>
+
+    {% if encrypted %}
+    <div class="mt-4 text-left">
+      <h3 class="text-green-600 font-semibold">Encrypted Text:</h3>
+      <textarea readonly class="w-full border p-2 mt-1">{{ encrypted }}</textarea>
+      <p class="text-sm text-gray-400 mt-2">Key: {{ key }}</p>
+    </div>
+    {% endif %}
+
+    <a href="/" class="text-blue-600 text-sm mt-4 inline-block">← Back to Home</a>
+  </div>
+</body>
+</html>
